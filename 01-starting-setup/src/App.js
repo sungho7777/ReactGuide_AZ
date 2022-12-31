@@ -1,6 +1,6 @@
 import Expenses from './components/Expeneses/Expenses';
 
-function App() {
+const App = () => {
   const expenses = [
     {
       id: 'e1',
