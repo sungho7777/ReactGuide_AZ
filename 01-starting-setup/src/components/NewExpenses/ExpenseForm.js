@@ -2,20 +2,31 @@ import React, {useState} from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = () => {
-    const [enterTitle, setEnterTitle] = useState('');
-    const [enterAmount, setEnterAmount] = useState('');
-    const [enterDate, setEnterDate] = useState('');
+    const [userInput, setUserInput] = useState({
+        enterTitle: '',
+        enterAmount: '',
+        enterDate: ''
+    });
     
     const titleChangeHandler = (event) => {
-        setEnterTitle(event.target.value);
+        setUserInput({
+            ...userInput,
+            enterTitle: event.target.value
+        })
     };
     const amountChangeHandler = (event) => {
-        setEnterAmount(event.target.value);
+        setUserInput({
+            ...userInput,
+            enterAmount: event.target.value
+        })
     };
     const dateChangeHandler = (event) => {
-        setEnterDate(event.target.value);
+        setUserInput({
+            ...userInput,
+            enterDate: event.target.value
+        })
     };
-    
+
     return (
         <form>
             <div className='new-expense__controls'>
